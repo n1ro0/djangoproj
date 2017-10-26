@@ -1,0 +1,28 @@
+ul li{display:inline-block;
+    list-style-type:none;}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
+header {background-image: url("../images/header_background.jpg");
+    background-size: cover;
+    height: 350px;
+    margin: -100px 0px 0px 0px;}
+
+nav{
+ position:relative;
+ outline:#000 groove;
+ align-items: center;
+}
+div {align-content: center;
+display: block;}
+section {
+    margin: 20px;}
+.navigation{
+    text-align: center;
+}

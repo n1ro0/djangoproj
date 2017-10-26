@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for author in authors %}
+        <section>
+            <lable>Name: </lable>
+            <a href="/authors/{{author.id}}">{{author.name}}</a><br/>
+            <lable>Born Year: </lable>
+            <lable>{{author.born_year}}</lable><br/>
+        </section>
+    {% endfor %}
+{% endblock %}

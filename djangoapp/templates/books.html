@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for book in books %}
+        <section>
+            <lable>Title: </lable>
+            <a href="/books/{{book.id}}">{{book.title}}</a><br/>
+            <lable>Year: </lable>
+            <lable>{{book.year}}</lable><br/>
+            <lable>Description: </lable>
+            <label>{{book.description}}<label/><br/>
+            <label>Category: <label/>
+            <a href="/categories/{{book.category.id}}">{{book.category.title}}</a><br/>
+            <label>Authors: <label/>
+            <ul>
+                {% for author in book.authors.all %}
+                    <li>
+                        <a href="/books/">{{author.name}}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+            <a href="/books/delete/{{book.id}}" class="button">Delete</a>
+        </section>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'styles/basestyles.css' %}"/>
+</head>
+<body>
+    <header>
+    {% block header %}
+    {% endblock %}
+    </header>
+    <nav>
+    {% block nav %}
+        <p class="navigation">
+            <a href="http://localhost:5000/books/">Books</a>
+            <a href="http://localhost:5000/categories/">Categories</a>
+            <a href="http://localhost:5000/authors/">Authors</a>
+        </p>
+    {% endblock %}
+    </nav>
+    <article>
+    {% block content %}
+    {% endblock %}
+    </article>
+    <footer>
+    {% block footer %}
+    {% endblock %}
+    </footer>
+</body>
+</html>

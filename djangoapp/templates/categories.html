@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for category in categories %}
+        <section>
+        <lable>Title: </lable>
+        <lable>{{category.title}}</lable>
+        </section>
+    {% endfor %}
+{% endblock %}
