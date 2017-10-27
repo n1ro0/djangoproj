@@ -2,6 +2,7 @@
 {% block content %}
     {% for book in books %}
         <section>
+            <img src="{{ book.preview.url }}"/>
             <lable>Title: </lable>
             <a href="/books/{{book.id}}">{{book.title}}</a><br/>
             <lable>Year: </lable>
