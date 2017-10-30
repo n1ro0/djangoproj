@@ -16,18 +16,21 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from djangoapp import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index),
     url(r'^categories/$', views.CategoryListView.as_view(), name="CategoryListView"),
     url(r'^books/$', views.BookListView.as_view(), name="BookListView"),
-    url(r'^books/detail/(?P<pk>\d+)$', views.BookDetailView.as_view(), name="BookDetailView"),
-    url(r'^books/(?P<pk>\d+)$', views.BookUpdateView.as_view(), name="BookUpdateView"),
-    url(r'^books/delete/(?P<pk>\d+)$', views.BookDeleteView.as_view(), name="BookDeleteView"),
+    url(r'^books/detail/(?P<pk>\d+)/$', views.BookDetailView.as_view(), name="BookDetailView"),
+    url(r'^books/(?P<pk>\d+)/$', views.BookUpdateView.as_view(), name="BookUpdateView"),
+    url(r'^books/delete/(?P<pk>\d+)/$', views.BookDeleteView.as_view(), name="BookDeleteView"),
     url(r'^books/create/$', views.BookCreateView.as_view(), name="create_book"),
     url(r'^authors/$', views.AuthorListView.as_view(), name="AuthorListView"),
-    url(r'^authors/(?P<pk>\d+)$', views.AuthorUpdateView.as_view(), name="AuthorUpdateView"),
+    url(r'^authors/(?P<pk>\d+)/$', views.AuthorUpdateView.as_view(), name="AuthorUpdateView"),
     url(r'^categories/create/$', views.CategoryCreateView.as_view(), name="create_category"),
     url(r'^comments/create/$', views.CategoryCreateView.as_view(), name="create_comment")
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

@@ -5,10 +5,10 @@
     <lable>Year: </lable>
     <lable>{{book.year}}</lable><br/>
     <lable>Description: </lable>
-    <label>{{book.description}}<label/><br/>
-    <label>Category: <label/>
+    <lable>{{book.description}}</lable><br/>
+    <lable>Category: </lable>
     <a href="/categories/{{book.category.id}}">{{book.category.title}}</a><br/>
-    <label>Authors: <label/>
+    <lable>Authors: </lable>
     <ul>
         {% for author in book.authors.all %}
             <li>
@@ -17,7 +17,7 @@
         {% endfor %}
     </ul>
     {% for comment in comments %}
-            <label>Comment {{comment.id}}:</label>
+            <lable>Comment {{comment.id}}:</lable>
             <p>{{comment.text}}</p>
     {% endfor %}
 {% endblock %}

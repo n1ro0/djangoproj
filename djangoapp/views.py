@@ -1,10 +1,9 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
-from . import models
-from . import forms
+from django.shortcuts import render
 from django.views import generic
-from django.shortcuts import reverse
-from . import tasks
+
+from djangoapp import tasks
+from . import forms
+from . import models
 
 
 #Book model------------------------------------------------------

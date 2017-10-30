@@ -24,3 +24,4 @@ class Comment(models.Model):
     text = models.TextField(max_length=1000)
     book = models.ForeignKey(Book)
 
+
